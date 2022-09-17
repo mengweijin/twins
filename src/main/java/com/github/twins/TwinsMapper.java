@@ -1,7 +1,5 @@
 package com.github.twins;
 
-import java.lang.reflect.InvocationTargetException;
-
 /**
  * @author mengweijin
  * @date 2022/9/17
@@ -19,7 +17,7 @@ public interface TwinsMapper {
      * @return a new instance of type D mapped with the properties of
      *         <code>sourceObject</code>
      */
-    <S, D> D map(S sourceObject, Class<D> destinationClass) throws NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException;
+    <S, D> D map(S sourceObject, Class<D> destinationClass);
 
     <S, D> D map(S sourceObject, D destinationObject);
 }
