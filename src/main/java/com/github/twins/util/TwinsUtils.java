@@ -11,11 +11,17 @@ public final class TwinsUtils {
     private TwinsUtils() {}
 
     public static <T> T newInstance(Class<T> cls) {
-        Assert.notNull(cls);
+        notNull(cls);
         try {
             return cls.getDeclaredConstructor().newInstance();
         } catch (Exception e) {
             throw new TwinsMapperException(e);
+        }
+    }
+
+    public static void notNull(Object obj) {
+        if(obj == null) {
+            throw new TwinsMapperException("[Assertion failed] - the object argument must not be null");
         }
     }
 }

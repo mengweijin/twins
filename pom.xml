@@ -41,6 +41,7 @@
       <groupId>cn.hutool</groupId>
       <artifactId>hutool-all</artifactId>
       <version>${hutool.version}</version>
+      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>ma.glasnost.orika</groupId>

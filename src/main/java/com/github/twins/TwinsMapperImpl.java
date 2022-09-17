@@ -1,6 +1,5 @@
 package com.github.twins;
 
-import com.github.twins.util.Assert;
 import com.github.twins.util.TwinsUtils;
 import lombok.Data;
 
@@ -28,7 +27,7 @@ public class TwinsMapperImpl implements TwinsMapper {
         if(sourceObject == null) {
             return null;
         }
-        Assert.notNull(destinationObject);
+        TwinsUtils.notNull(destinationObject);
 
 
         return null;
