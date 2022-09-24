@@ -1,6 +1,6 @@
 package com.github.twins;
 
-import com.github.twins.converter.TwinsConverter;
+import com.github.twins.converter.TwinsConverterFactory;
 import com.github.twins.mapping.TwinsMapping;
 import lombok.Data;
 
@@ -16,7 +16,7 @@ public class TwinsContext {
 
     private TwinsConfiguration configuration = new TwinsConfiguration();
 
-    private List<TwinsConverter> converters = new ArrayList<>();
+    private TwinsConverterFactory factory = new TwinsConverterFactory();
 
     private List<TwinsMapping<?, ?>> mappings = new ArrayList<>();
 
@@ -24,7 +24,5 @@ public class TwinsContext {
 
     }
 
-    public void register(TwinsConverter converter) {
-        this.converters.add(converter);
-    }
+
 }

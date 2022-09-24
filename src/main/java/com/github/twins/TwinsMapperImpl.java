@@ -1,5 +1,7 @@
 package com.github.twins;
 
+import com.github.twins.converter.TwinsConverter;
+import com.github.twins.converter.TwinsConverterFactory;
 import com.github.twins.util.TwinsUtils;
 import lombok.Data;
 
@@ -29,7 +31,13 @@ public class TwinsMapperImpl implements TwinsMapper {
         }
         TwinsUtils.notNull(destinationObject);
 
+        TwinsConverterFactory factory = context.getFactory();
+        TwinsConverter<?, ?> converter = factory.getConverter(sourceObject.getClass(), destinationObject.getClass());
+        if(converter != null) {
+            destinationObject = (D) converter.convert(sourceObject, destinationObject.getClass(), context);
+        }
 
-        return null;
+        return destinationObject;
     }
+
 }
